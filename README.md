@@ -95,7 +95,7 @@ Users will be able to switch between local and cloud execution depending on thei
 
 ## REA Integration — Reverse Engineer Anything
 
-<image_placeholder />
+
 
 MXM integrates with [REA (Reverse Engineer Anything)](https://github.com/morluto/rea), an external reverse-engineering framework that provides AI agents with tools for investigating software behavior, application structures, and compiled binaries.
 
