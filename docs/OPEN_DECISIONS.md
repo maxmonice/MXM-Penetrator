@@ -77,7 +77,7 @@ The full list of security requirements is the index in [SECURITY_REQUIREMENTS.md
 | ID | Decision | Needed before | Related |
 |---|---|---|---|
 | OD-29 | Initial ground-truth application (OWASP Juice Shop, DVWA, or OWASP WebGoat), ground-truth labeling, and acceptance thresholds | Phase 1 (application), later (thresholds) | `SEC-056` |
-| OD-30 | The single reconnaissance module for the vertical slice | Phase 0 | [V1_ROADMAP.md](V1_ROADMAP.md) |
+| OD-30 | *Settled by decision T:* the slice module is HTTP fingerprinting and security-header analysis (safe-active). Still open: its exact manifest, the set of URLs it may fetch, and its parameters, which depend on `OD-03` | Phase 0 | [V1_ROADMAP.md](V1_ROADMAP.md) |
 | OD-31 | Initial module list for later phases | Phase 3 | [V1_ROADMAP.md](V1_ROADMAP.md) |
 | OD-32 | Python package structure, CLI framework, schema format and versioning strategy | Phase 0 | [ARCHITECTURE.md](ARCHITECTURE.md) |
 | OD-33 | Local model runtime and the providers supported at launch | Phase 4 | `SEC-052` |

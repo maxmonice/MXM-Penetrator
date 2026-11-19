@@ -14,7 +14,7 @@ Phases may overlap after Phase 1, but **exit criteria gate release claims**: not
 - Define versioned schemas for authorization, scope, module manifests, request plans and responses, action proposals, policy decisions, approvals, cleanup-ledger entries, evidence, findings, and audit events (including previous-hash and own-hash fields for `SEC-044`).
 - Define error and reason-code registries.
 - Review and baseline [THREAT_MODEL.md](THREAT_MODEL.md); keep [SECURITY_REQUIREMENTS.md](SECURITY_REQUIREMENTS.md) current.
-- Decide the items the slice depends on: the slice's reconnaissance module (OD-30), the safe-active numeric thresholds (OD-03), environment designation (OD-12), the tooling and rule set for the module-interface automated checks (OD-15; approach settled by decision S), the control-channel mechanism for the slice (OD-11), response-size handling (OD-22), redaction rules for the slice (OD-24), sanitizer rules (OD-27), and the first ground-truth application (OD-29).
+- Decide the items the slice depends on: the slice module's manifest details (OD-30; module chosen by decision T), the safe-active numeric thresholds (OD-03), environment designation (OD-12), the tooling and rule set for the module-interface automated checks (OD-15; approach settled by decision S), the control-channel mechanism for the slice (OD-11), response-size handling (OD-22), redaction rules for the slice (OD-24), sanitizer rules (OD-27), and the first ground-truth application (OD-29).
 - Governance files are in place: [../LICENSE](../LICENSE), [../SECURITY.md](../SECURITY.md), [../RESPONSIBLE_USE.md](../RESPONSIBLE_USE.md).
 
 **Exit criteria:** Schemas are documented, validated, versioned, and covered by tests. The threat model is reviewed. The listed prerequisite decisions are closed.
@@ -25,7 +25,7 @@ The first vertical slice **must include**:
 
 1. **Authorized target input** (an authorization record and explicit scope, `SEC-001`, `SEC-002`; unknown environment treated as Production, `SEC-005`).
 2. **Scope and policy validation** (`SEC-016`; the slice supports only passive and safe-active classes, and every other class is denied under `SEC-019`).
-3. **One internal reconnaissance module**, written to the Sans-IO interface with a manifest (`SEC-032`, `SEC-034`).
+3. **One internal reconnaissance module**, written to the Sans-IO interface with a manifest (`SEC-032`, `SEC-034`). The module is **HTTP fingerprinting and security-header analysis** (decision T): ordinary safe-active requests to in-scope URLs, with analysis of server banners, response headers, and the presence of security headers. Probing for hidden or unlinked paths at volume is intrusive and is not part of the slice.
 4. **The centralized executor** (`SEC-033`).
 5. **Evidence collection and sanitization** (`SEC-039`, default redaction under `SEC-045`).
 6. **Basic JSON and Markdown reporting.**
