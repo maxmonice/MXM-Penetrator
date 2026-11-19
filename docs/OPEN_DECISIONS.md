@@ -52,7 +52,7 @@ The full list of security requirements is the index in [SECURITY_REQUIREMENTS.md
 
 | ID | Decision | Needed before | Related |
 |---|---|---|---|
-| OD-15 | How violations of the Sans-IO interface are detected (import restrictions, checks, tests); module file-system and subprocess restrictions; whether modules and the executor run in separate processes | Phase 0 / Phase 1 | `SEC-032` |
+| OD-15 | *Narrowed by decision S:* detection is review plus automated checks, and separate-process containment is deferred. Still open: the checking tooling, the banned-import and banned-call rule set, and the policy for module file-system access | Phase 0 / Phase 1 | `SEC-032` |
 | OD-16 | Governance of third-party passive data sources: allowed sources, rate limits, and what target identifiers may be disclosed to them | Phase 1 (if the slice module uses any) | `SEC-034`, [ACTION_CLASSIFICATION.md](ACTION_CLASSIFICATION.md) |
 | OD-17 | Windows enforcement mechanism and the guarantees it can support | Design before Phase 2; validation by Phase 5 | `SEC-035`, `SEC-036` |
 | OD-18 | Linux and macOS enforcement mechanisms and support matrix | Phase 5 | `SEC-035`, `SEC-036` |

@@ -46,7 +46,13 @@ Sans-IO **does not sandbox malicious Python code**. A module is Python code runn
 - OS-level enforcement (`SEC-035`) operates on processes. If modules and the executor share a process, OS controls cannot distinguish module traffic from executor traffic.
 - **External adapters are different**: they run tools MXM does not control and therefore require OS or process-level isolation (`SEC-036`).
 
-Mechanisms to detect violations of the interface (for example restrictions on imports, automated checks, and tests), restrictions on module file-system and subprocess access, and whether the executor runs in a separate process from modules are not yet decided (OD-15).
+### Detecting violations (decision S)
+
+- **v1 detects interface violations with code review plus automated checks.** The checks flag network and subprocess use in module code (for example through import restrictions or lint rules), and module tests run with no network access. These catch **accidental** violations. They do not stop deliberately hostile code.
+- **Modules and the executor share a process in v1.** Separate-process containment is deferred, not rejected.
+- **The interface must stay separable.** Request plans and responses are plain, serializable typed data, and a module must not depend on shared in-process objects with the executor. This keeps a later move to a separate module process possible without rewriting module logic.
+
+The exact tooling, the banned-import and banned-call rule set, and the policy for module file-system access remain open (OD-15).
 
 ## SEC-033 — A single centralized executor
 

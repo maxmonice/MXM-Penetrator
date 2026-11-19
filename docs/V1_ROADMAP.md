@@ -14,7 +14,7 @@ Phases may overlap after Phase 1, but **exit criteria gate release claims**: not
 - Define versioned schemas for authorization, scope, module manifests, request plans and responses, action proposals, policy decisions, approvals, cleanup-ledger entries, evidence, findings, and audit events (including previous-hash and own-hash fields for `SEC-044`).
 - Define error and reason-code registries.
 - Review and baseline [THREAT_MODEL.md](THREAT_MODEL.md); keep [SECURITY_REQUIREMENTS.md](SECURITY_REQUIREMENTS.md) current.
-- Decide the items the slice depends on: the slice's reconnaissance module (OD-30), the safe-active numeric thresholds (OD-03), environment designation (OD-12), the module-interface enforcement approach (OD-15), the control-channel mechanism for the slice (OD-11), response-size handling (OD-22), redaction rules for the slice (OD-24), sanitizer rules (OD-27), and the first ground-truth application (OD-29).
+- Decide the items the slice depends on: the slice's reconnaissance module (OD-30), the safe-active numeric thresholds (OD-03), environment designation (OD-12), the tooling and rule set for the module-interface automated checks (OD-15; approach settled by decision S), the control-channel mechanism for the slice (OD-11), response-size handling (OD-22), redaction rules for the slice (OD-24), sanitizer rules (OD-27), and the first ground-truth application (OD-29).
 - Governance files are in place: [../LICENSE](../LICENSE), [../SECURITY.md](../SECURITY.md), [../RESPONSIBLE_USE.md](../RESPONSIBLE_USE.md).
 
 **Exit criteria:** Schemas are documented, validated, versioned, and covered by tests. The threat model is reviewed. The listed prerequisite decisions are closed.

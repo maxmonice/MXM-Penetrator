@@ -2,6 +2,10 @@
 
 All notable documentation changes are recorded here. No application code exists; every entry describes documentation only.
 
+## 1.1.1 — Module-interface enforcement (2026-11-19)
+
+Decision **S**: Sans-IO violations are detected by code review plus automated checks (import and call restrictions, tests that run modules with no network). Modules and the executor share a process in v1; separate-process containment is deferred. Request plans and responses must remain plain, serializable typed data so containment can be added later. Updated [MODULE_ARCHITECTURE.md](docs/MODULE_ARCHITECTURE.md), [TESTING_STRATEGY.md](docs/TESTING_STRATEGY.md), [THREAT_MODEL.md](docs/THREAT_MODEL.md), [V1_ROADMAP.md](docs/V1_ROADMAP.md), [CONSISTENCY_REVIEW.md](docs/CONSISTENCY_REVIEW.md), and narrowed `OD-15` in [OPEN_DECISIONS.md](docs/OPEN_DECISIONS.md) to the remaining tooling, rule set, and file-system policy.
+
 ## 1.1.0 — v1 documentation revision (2026-11-19)
 
 Revises the 14-document baseline (README plus 13 documents in `docs/`) to incorporate the architecture review and the decisions made since.
